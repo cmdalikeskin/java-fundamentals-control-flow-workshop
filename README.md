@@ -1,14 +1,14 @@
-# Java Template
+# Java Control Flow Workshop
 
 ## Learning Objectives
 - Use conditional statements to control the logical flow of an application
-- Understand If statements, if-else, if-else-if-else etc
-- Understand Switch statements
+- Understand and use if statements, if-else, if-else-if-else etc
+- Understand and use switch statements
 - Ternary Operators in Java
 
 ## Conditional Statements
 
-Just like in JavaScript, Java uses conditionals and tests which generate them to decide which bits of code to run, if statements work in a very similar way to JavaScript.
+Like most programming languages, Java uses conditionals and tests which generate them to decide which bits of code to run.
 
 Start by just creating a Main class in the com.booleanuk package inside src as normal and adding the following code to it:
 
@@ -49,9 +49,9 @@ public class Main {
 
 And it would work as expected.
 
-We can use <, >, <= and >= to compare numbers in the same way we did before. 
+We can use `<`, `>`, `<=` and `>=` to compare numbers in various ways. 
 
-We can test various values with only the first one that evaluates as true being run as follows (this is very similar to the way things are done in JavaScript).
+We can test multiple values with only the first one that evaluates as true being run as follows (this is very similar to the way things are done in JavaScript).
 
 ```java
 package com.booleanuk;
@@ -78,18 +78,16 @@ public class Main {
 ## Activity
 
 Recreate something similar but to test whether a person is old enough to drive (I'll use the UK rules) and output a suitable message each time.
-
-Under 16 they can't drive.
-16+ they can ride a low-powered motorbike/moped.
-17+ they can learn to drive a car or other vehicle.
-70+ Must reapply for a driving license every 2 years.
+- Under 16 they can't drive.
+- 16+ they can ride a low-powered motorbike/moped.
+- 17+ they can learn to drive a car or other vehicle.
+- 70+ Must reapply for a driving license every 2 years.
 
 ## Switch statements
 
 A switch statement in Java is a simplified version of the if-else-if-else-if-else pattern above, but it is limited in what can be tested. It may let us achieve a similar outcome whilst reducing the amount of code we write but not always. One thing to bear in mind is that we can't cover a range of values in the same way we did above easily, instead it works on single values being compared.
 
 Let's do an example using score again
-
 
 ```java
 package com.booleanuk;
@@ -129,13 +127,17 @@ public class Main {
 
 A common error is to omit the `break;` statement which will cause multiple cases to run.
 
+## Enhanced Switch Statements
+
+If you are using Java 13 or newer (as we are) then we can replace the `Switch` statement above with an `Enhanced Switch` statement. IntelliJ will offer to do this for you, click on the yellow light bulb and select this to see it in action.
+
 ## Activity
 
-Create a switch statement which tests a String to see what month it is, and outputs a nicely formatted string with the number of days in the month.
+Create a switch statement which tests a String to see what month it is, and outputs a nicely formatted string with the number of days in the month, you can use an `Enhanced Switch` statement if you prefer.
 
 ## Ternary Statements
 
-In place of an if-else statement, if we are looking to assign a value to a variable that is different depeding on the outcome of a simple test then we can replace it with a `Ternary Statement` for instance we can replace the if statement here:
+In place of an if-else statement, if we are looking to assign a value to a variable that is different depending on the outcome of a simple test then we can replace it with a `Ternary Statement` for instance we can replace the if statement here:
 
 ```java
 package com.booleanuk;
@@ -248,7 +250,7 @@ When you run a test, it's either going to pass or fail. When it fails, you'll be
 
 One of the core skills of a developer is debugging stack traces like this. The stack trace details in which classes & files the failure happened, and gives you a line number at the end. Most of the lines in the stack trace are irrelevant most of the time, you want to try and identify the files that you're actually working with.
 
-In the sample screenshot below, we've tried to complete the first step of the exercise but provided an invalid value. Then we run the test associated with it and we see a big red stack trace, a test failure.
+In the sample screenshot below, we've tried to complete the first step of the exercise but provided an invalid value. Then we run the test associated with it, and we see a big red stack trace, a test failure.
 
 At the top, we see `expected: <32> but was: <33>`. This means the test expected the value to be 32, but the value the student provided was 33. We can see this in the code snippets at the top of the screenshot.
 
